@@ -178,3 +178,21 @@ body {
     color: orange;
     background-color: transparent;
 }
+
+
+
+.btn-group {
+    width: 100%;
+}
+
+.btn svg {
+    fill: #000000; /* Default icon color */
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+.btn.active svg {
+    fill: #FD842D; /* Active icon color */
+    width: 30px;
+    height: 30px; /* Larger size when active */
+}

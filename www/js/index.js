@@ -53,26 +53,6 @@ function onGeoSuccess(position) {
         });
 
 
-    /*
-    var currentLocation = L.marker([lat, lon], {icon: blueIcon});
-    currentLocation.addTo(map);
-    
-    currentLocation.on('click', function(e) {
-        var markerCoordinates = e.target.getLatLng(); // Récupération des coordonnées du marqueur
-    
-        map.flyTo(markerCoordinates, 25, {
-            animate: true,
-            duration: 0.5,
-            easeLinearity: 0.25,
-            noMoveStart: false
-        });
-    
-        map.once('moveend', function() {
-            setTimeout(function() {
-                map.invalidateSize();
-            }, 1000); // Retarde légèrement l'appel pour gérer les problèmes de timing
-        });
-    });*/
 
     
     
