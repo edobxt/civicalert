@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         map.invalidateSize();
 
-        alert([lat, lon]);
 
         // Requête à l'API pour obtenir la liste des incidents
         fetch('https://api.civicalert.fr/listeIncidents')
