@@ -57,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <p>${item.description}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <p>Date: ${formatDate(item.date_event)}</p>
-                <img src="img/pouce-black.png" alt="like" width="26"/>
+                <button class="btn" id="confirmerIncident">
+                    <img src="img/pouce-black.png" alt="like" width="26"/>
+                </button>
             </div>
             <a href="info.html"><p class="text-center">voir les détails</p></a>
         `;
@@ -65,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('incidentInfo').innerHTML = content;
         document.getElementById('infoPanel').style.display = 'block';
     }
+
+    document.getElementById('confirmerIncident').addEventListener('click', () => {
+        ///putain de code de giovanni
+    });
 
     function closeInfoPanel() {
         document.getElementById('infoPanel').style.display = 'none';
