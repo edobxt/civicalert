@@ -48,11 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Stocker le token dans le localStorage ou le sessionStorage selon le choix de l'utilisateur
                 if (document.getElementById('remember').checked) {
                     localStorage.setItem('token', data.token);
+                    localStorage.setItem('idCitoyen', data.idCitoyen);
+                    localStorage.setItem('pseudoCitoyen', data.pseudo);
                 } else {
                     sessionStorage.setItem('token', data.token);
+                    sessionStorage.setItem('idCitoyen', data.idCitoyen);
+                    sessionStorage.setItem('pseudoCitoyen', data.pseudo);
                 }
 
-                // Afficher un message de succès
+                // Afficher un message de succès&   
                 Swal.fire({
                     icon: 'success',
                     title: 'Connexion réussie!',
