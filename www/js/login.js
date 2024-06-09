@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('idCitoyen', data.idCitoyen);
                     localStorage.setItem('pseudoCitoyen', data.pseudo);
-                } else {
-                    sessionStorage.setItem('token', data.token);
-                    sessionStorage.setItem('idCitoyen', data.idCitoyen);
-                    sessionStorage.setItem('pseudoCitoyen', data.pseudo);
                 }
+                sessionStorage.setItem('token', data.token);
+                sessionStorage.setItem('idCitoyen', data.idCitoyen);
+                sessionStorage.setItem('pseudoCitoyen', data.pseudo);
+                
 
                 // Afficher un message de succès&   
                 Swal.fire({
