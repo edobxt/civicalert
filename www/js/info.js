@@ -23,9 +23,64 @@ document.addEventListener("DOMContentLoaded", function () {
             incidentImageElement.innerHTML = `<img src="${imageUrl}" class="img-fluid" alt="Image de l'incident">`;
         }
 
+
     }
 
+        const buttonPouce = document.getElementById('confirmerIncident');
+        const IncidentEstConfirme = localStorage.getItem('IncidentEstConfirme');
+        if (IncidentEstConfirme === 'true') {
+            buttonPouce.innerHTML = `<img src="img/pouce-orange-full.png" alt="like" width="26"/>`;
+        } else {
+            buttonPouce.innerHTML = `<img src="img/pouce-orange.png" alt="like" width="26"/>`;
+        }
+
+        function confirmerIncident(idIncident) {
+            fetch(`https://api.civicalert.fr/confirmer/${idIncident}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('token') // Ajoutez l'en-tête d'autorisation si nécessaire
+                },
+                body: JSON.stringify({
+                    // Pas besoin de l'ID dans le corps car il est déjà dans l'URL
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`La requête a échoué avec le statut ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        console.error('Erreur :', data.error);
+                    } else {
+                        console.log(data.message);
+                        localStorage.setItem('IncidentEstConfirme', 'true');
+                        buttonPouce.innerHTML = `<img src="img/pouce-orange-full.png" alt="like" width="26"/>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur :', error);
+                });
+        }
+
+        buttonPouce.addEventListener('click', function () {
+            const idIncident = localStorage.getItem('incidentId');
+            if (idIncident) {
+                confirmerIncident(idIncident);
+            } else {
+                console.error('Erreur : Aucun ID d\'incident trouvé dans le stockage local');
+            }
+        });
+
+
+
 });
+
+
+
+
 
 function formatDate(dateString) {
     const date = new Date(dateString);
