@@ -68,9 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('infoPanel').style.display = 'block';
     }
 
-    document.getElementById('confirmerIncident').addEventListener('click', () => {
-        ///putain de code de giovanni
-    });
+
 
     function closeInfoPanel() {
         document.getElementById('infoPanel').style.display = 'none';

@@ -25,24 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    document.getElementById("mapBtn").addEventListener("click", function () {
-        console.log("Map button clicked");
-        // Add page change logic here
-    });
-
-    document.getElementById("listBtn").addEventListener("click", function () {
-        console.log("List button clicked");
-    });
-
-    document.getElementById("clockBtn").addEventListener("click", function () {
-        console.log("Clock button clicked");
-        // Add page change logic here
-    });
-
-    document.getElementById("userBtn").addEventListener("click", function () {
-        console.log("User button clicked");
-        // Add page change logic here
-    });
 });
 
 function formatDate(dateString) {
